@@ -1,28 +1,65 @@
-import { StyleSheet, Image } from "react-native";
-import { Text, View } from "@/components/Themed";
-const map = require('@/assets/images/map.jpg');
+import React from "react";
+import {
+  StyleSheet,
+  Image,
+  View,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
+
+const map = require("@/assets/images/map.jpg");
 
 export default function MainScreen() {
   return (
     <View style={styles.container}>
-      <Image source={map}/>
+      <Image source={map} style={styles.image} />
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button}>
+          <FontAwesome name="user" size={50} color="black" />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <FontAwesome name="plus" size={50} color="black" />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <FontAwesome name="search" size={40} color="black" />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
+
+const windowHeight = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "white",
   },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
+  image: {
+    width: "100%",
+    height: windowHeight * 0.68,
+    resizeMode: "cover",
+    top: 0,
+    position: "absolute",
+    marginBottom: 20,
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
+  buttonContainer: {
+    flexDirection: "row",
+    position: "absolute",
+    bottom: 15,
+    alignSelf: "center",
+  },
+  button: {
+    backgroundColor: "#d6d6d6",
+    padding: 1,
+    borderRadius: 30,
+    marginHorizontal: 30,
+    height: 60,
+    aspectRatio: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
