@@ -17,10 +17,15 @@ function TabLoginScreen() {
     Alert.alert('Register Pressed', 'Navigate to registration screen.');
   };
 
+  const onForgotPress = () => {
+    // Placeholder for navigation logic
+    Alert.alert('Frogot Pressed', 'Navigate to Frogot screen.');
+  };
+
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
-        <Image src={require('../assets/images/logo-placeholder.png')} />
+        <Image source ={require('../../assets/images/logo-placeholder.png')} style = {styles.logo} />
         <Text style={styles.title}>Login</Text>
 
         {/* Text input fields */}
@@ -37,10 +42,15 @@ function TabLoginScreen() {
           placeholder="Password"
           secureTextEntry={true}
         />
+        <TouchableOpacity onPress={onForgotPress} style={styles.registerContainer}>
         <Text style={styles.text}>Forgot Password</Text>
+        </TouchableOpacity>
+
+        {/* Login button */}
         <View style={styles.fixToText}>
           <Button
             title="Login"
+            color={'#000000'}
             onPress={onLoginPress} 
           />
         </View>
@@ -48,10 +58,12 @@ function TabLoginScreen() {
 
       {/* Footer with Register Section */}
       <View style={styles.footer}>
-        <TouchableOpacity onPress={onRegisterPress} style={styles.registerContainer}>
-          <Text style={styles.text}>Don't have an account? </Text>
-          <Text style={styles.registerText}>Register</Text>
-        </TouchableOpacity>
+        <View style ={styles.registerContainer}>
+          <Text style={styles.text} disabled>Don't have an account? </Text>
+            <TouchableOpacity onPress={onRegisterPress} style={styles.registerContainer}>
+              <Text style={styles.registerText}>Register</Text>
+            </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -75,7 +87,7 @@ const styles = StyleSheet.create({
   title: {              
     fontSize: 20,
     fontWeight: 'bold',  
-    marginVertical: 30,
+    marginBottom: 50,
   },
   // Input Section
   input: {
@@ -112,4 +124,11 @@ const styles = StyleSheet.create({
     color: 'black',
     fontWeight: 'bold',
   },
+  // Logo
+  logo: {
+    width: 100,
+    height: 100,
+    alignSelf: 'center',
+    marginBottom: 5,
+  }
 });
