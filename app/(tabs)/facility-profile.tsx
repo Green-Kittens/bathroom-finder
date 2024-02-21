@@ -1,5 +1,5 @@
 import { Text, View } from '@/components/Themed';
-import { StyleSheet, Button, Animated, Pressable } from 'react-native';
+import { StyleSheet, Button, Animated, Image } from 'react-native';
 import { useEffect, useState, useRef } from 'react';
 
 const maxLineNumber = 5;
@@ -7,7 +7,10 @@ const maxLineNumber = 5;
 function Review() {
     return (
         <View style={styles.review}>
-        <img src={"./assets/images/icon.png"} alt="Placeholder for profile image" style={{height: '50%'}}/>
+            <Image
+        style={{height: 60, width: 60}}
+        source={require('@/assets/images/icon.png')}
+      />
         <Text style={[styles.paragraph, {fontWeight: 'bold'}]}>Username</Text>
         <Text style={styles.paragraph} numberOfLines={2}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
