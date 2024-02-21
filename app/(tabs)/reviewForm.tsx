@@ -31,7 +31,7 @@ export default function TabReviewForm() {
           <Text style={styles.title}>New Bathroom Rating</Text>
 
           <View style={styles.dropdown}>
-            <RNPickerSelect // figure out how to change text color to white
+            <RNPickerSelect 
                 placeholder={{
                     label: "select a location",
                     value: null,
@@ -72,7 +72,7 @@ export default function TabReviewForm() {
           <View style={styles.button}>
             <Button
                     title="Post Rating"
-                    color="white"
+                    color="RGA0000"
                     onPress={() => {
                         // handle submit
                     }}
