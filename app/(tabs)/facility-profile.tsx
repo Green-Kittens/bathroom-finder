@@ -4,6 +4,24 @@ import { useEffect, useState, useRef } from 'react';
 
 const maxLineNumber = 5;
 
+function Review() {
+    return (
+        <View style={styles.review}>
+        <img src={"./assets/images/icon.png"} alt="Placeholder for profile image" style={{height: '50%'}}/>
+        <Text style={[styles.paragraph, {fontWeight: 'bold'}]}>Username</Text>
+        <Text style={styles.paragraph} numberOfLines={2}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+        </View>
+    )
+}
+
 function CollapseView() {
   const [collapsed, setCollapsed] = useState(true);
   const [maxLines, setMaxLines] = useState(2);
@@ -65,10 +83,10 @@ const changeText = (isCollapsed: boolean) => {
       <Button title={changeText(collapsed)} onPress={toggleCollapsed} />
       <View style={styles.separator} lightColor="#aaa" darkColor="rgba(255,255,255,0.1)" />
       <View style={styles.row}>
-      <Text style={styles.paragraph}>
-        Review here
-      </Text>
-      <Button title={'See more'} />
+        <Review />
+        <View style={[{ width: "10%", margin: 10, justifyContent: 'center'}]}>
+            <Button title={'See more'} />
+        </View>
       </View>
     </View>
   );
@@ -77,19 +95,19 @@ const changeText = (isCollapsed: boolean) => {
 export default function TabFacilityProfileScreen() {
   return (
     <View style={styles.container}>
+    <View style={[{flex: .9, alignItems: 'center'}]}>
       <Text style={styles.title}>Facility Name</Text>
-        <img src={"./assets/images/icon.png"} alt="image" style={{height: '40%', justifyContent: 'center', alignItems: 'center'}}/>
-            <View style={styles.body_container}>
-            <View style={styles.stars}>
-                <img src={"./assets/images/star_unfilled.png"} alt="image" style={{height: '50%'}}/>
-                <img src={"./assets/images/star_unfilled.png"} alt="image" style={{height: '50%'}}/>
-                <img src={"./assets/images/star_unfilled.png"} alt="image" style={{height: '50%'}}/>
-                <img src={"./assets/images/star_unfilled.png"} alt="image" style={{height: '50%'}}/>
-                <img src={"./assets/images/star_unfilled.png"} alt="image" style={{height: '50%'}}/>
+        <img src={"./assets/images/icon.png"} alt="Placeholder for facility image" style={{height: '70%', justifyContent: 'center', alignItems: 'center'}}/>
+            <View style={[{flex: 1, justifyContent: 'center', flexDirection: 'row', alignItems: 'center'}]}>
+                <img src={"./assets/images/star_unfilled.png"} alt="Black outline of a star" style={{height: '40%'}}/>
+                <img src={"./assets/images/star_unfilled.png"} alt="Black outline of a star" style={{height: '40%'}}/>
+                <img src={"./assets/images/star_unfilled.png"} alt="Black outline of a star" style={{height: '40%'}}/>
+                <img src={"./assets/images/star_unfilled.png"} alt="Black outline of a star" style={{height: '40%'}}/>
+                <img src={"./assets/images/star_unfilled.png"} alt="Black outline of a star" style={{height: '40%'}}/>
                 <Text style={styles.body}>  5.0 stars</Text>
             </View>
         </View>
-        <View style={styles.outer_body_container}>
+        <View style={[{flex: 1, marginHorizontal: 40}]}>
             <CollapseView />
         </View>
     </View>
@@ -107,24 +125,14 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    marginHorizontal: 400,
+    marginHorizontal: 40,
   },
   
   body_container: {
     flex: .5,
     alignItems: 'flex-start',
     justifyContent: 'center',
-    marginHorizontal: 400,
-  },
-  stars: {
-    flex: .3,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    marginHorizontal: 20,
-    marginVertical: 20,
-    alignItems: 'center',
-
+    marginHorizontal: 40,
   },
   title: {
     fontSize: 20,
@@ -145,9 +153,15 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   row: {
+    flex: .1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  review: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    flexWrap: 'wrap',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
   },
-
 });
