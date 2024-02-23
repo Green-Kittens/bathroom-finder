@@ -7,11 +7,13 @@ const maxLineNumber = 5;
 function Review() {
     return (
         <View style={styles.review}>
-            <Image
-        style={{height: 60, width: 60}}
-        source={require('@/assets/images/icon.png')}
-      />
+        <Image style={{height: 60, width: 60}} source={require('@/assets/images/icon.png')}/>
         <Text style={[styles.paragraph, {fontWeight: 'bold'}]}>Username</Text>
+        <Image style={{height: 15, width: 15, alignSelf: 'center'}} source={require('@/assets/images/star_unfilled.png')}/>
+        <Image style={{height: 15, width: 15, alignSelf: 'center'}} source={require('@/assets/images/star_unfilled.png')}/>
+        <Image style={{height: 15, width: 15, alignSelf: 'center'}} source={require('@/assets/images/star_unfilled.png')}/>
+        <Image style={{height: 15, width: 15, alignSelf: 'center'}} source={require('@/assets/images/star_unfilled.png')}/>
+        <Image style={{height: 15, width: 15, alignSelf: 'center'}} source={require('@/assets/images/star_unfilled.png')}/>
         <Text style={styles.paragraph} numberOfLines={2}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -87,7 +89,7 @@ const changeText = (isCollapsed: boolean) => {
       <View style={styles.separator} lightColor="#aaa" darkColor="rgba(255,255,255,0.1)" />
       <View style={styles.row}>
         <Review />
-        <View style={[{ width: "10%", margin: 10, justifyContent: 'center'}]}>
+        <View style={[{ width: "10%", margin: 10, justifyContent: 'flex-start'}]}>
             <Button title={'See more'} />
         </View>
       </View>
@@ -100,13 +102,13 @@ export default function TabFacilityProfileScreen() {
     <View style={styles.container}>
     <View style={[{flex: .9, alignItems: 'center'}]}>
       <Text style={styles.title}>Facility Name</Text>
-        <img src={"./assets/images/icon.png"} alt="Placeholder for facility image" style={{height: '70%', justifyContent: 'center', alignItems: 'center'}}/>
-            <View style={[{flex: 1, justifyContent: 'center', flexDirection: 'row', alignItems: 'center'}]}>
-                <img src={"./assets/images/star_unfilled.png"} alt="Black outline of a star" style={{height: '40%'}}/>
-                <img src={"./assets/images/star_unfilled.png"} alt="Black outline of a star" style={{height: '40%'}}/>
-                <img src={"./assets/images/star_unfilled.png"} alt="Black outline of a star" style={{height: '40%'}}/>
-                <img src={"./assets/images/star_unfilled.png"} alt="Black outline of a star" style={{height: '40%'}}/>
-                <img src={"./assets/images/star_unfilled.png"} alt="Black outline of a star" style={{height: '40%'}}/>
+        <Image source={require('@/assets/images/icon.png')} style={{height: 250, width: 250}}/>
+                <View style={[{flex: 1, justifyContent: 'center', flexDirection: 'row', alignItems: 'center'}]}>
+                <Image style={{height: 30, width: 30}} source={require('@/assets/images/star_unfilled.png')}/>
+                <Image style={{height: 30, width: 30}} source={require('@/assets/images/star_unfilled.png')}/>
+                <Image style={{height: 30, width: 30}} source={require('@/assets/images/star_unfilled.png')}/>
+                <Image style={{height: 30, width: 30}} source={require('@/assets/images/star_unfilled.png')}/>
+                <Image style={{height: 30, width: 30}} source={require('@/assets/images/star_unfilled.png')}/>
                 <Text style={styles.body}>  5.0 stars</Text>
             </View>
         </View>
