@@ -1,14 +1,7 @@
-import React, { useState } from "react";
-import {
-  StyleSheet,
-  Image,
-  SafeAreaView,
-  TextInput,
-  Button,
-  Alert,
-  TouchableOpacity,
-} from "react-native";
-import { Text, View } from "@/components/Themed";
+import React, { useState } from 'react';
+import { StyleSheet,Image, SafeAreaView, TextInput, Button, Alert, TouchableOpacity } from 'react-native';
+import { Text, View } from '@/components/Themed';
+import { useNavigation } from '@react-navigation/native';
 
 function TabLoginScreen() {
   // State management for text inputs
