@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
+/* eslint-disable */
 const map = require("@/assets/images/map.jpg");
 
 export default function MainScreen() {
