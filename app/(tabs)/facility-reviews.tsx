@@ -2,6 +2,8 @@ import { Button, Image, ScrollView, StyleSheet } from "react-native";
 
 import { Text, View } from "@/components/Themed";
 
+const unused = "hello";
+
 export default function FacilityReviewsScreen() {
   return (
     <ScrollView>
