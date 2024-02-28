@@ -1,0 +1,19 @@
+name: Prettier
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install
+        run: npm install
+
+      - name: Check if code is Pretty
+        run: npx prettier -c .

@@ -1,3 +1,4 @@
+import React from "react";
 import { Button, Image, ScrollView, StyleSheet } from "react-native";
 
 import { Text, View } from "@/components/Themed";

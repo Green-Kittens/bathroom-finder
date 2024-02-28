@@ -1,3 +1,4 @@
+import React from "react";
 import { Image, ScrollView, StyleSheet, Button } from "react-native";
 
 import { Text, View } from "@/components/Themed";
@@ -25,7 +26,7 @@ export default function UserProfileScreen() {
   );
 }
 
-function horizontalCards(title: String) {
+function horizontalCards(title: string) {
   return (
     <View>
       <Text style={{ margin: 10 }}>{title}</Text>
