@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  prettier:
+  export:
     runs-on: ubuntu-latest
 
     steps:
